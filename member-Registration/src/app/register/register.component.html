@@ -1,0 +1,75 @@
+<div style="position: absolute;right: 570px; top: 95px; text-decoration: underline;">
+    <h1 >Register Here...</h1>
+    <br></div>
+  
+  
+            <hr >
+            <br>
+            <div  id="registrationFormContainer" class="form">
+                <form [formGroup]="registerationForm" (ngSubmit)="registerUser()" >
+                    <div>
+                        <label class="label" for="name">Name</label>
+                        <input id="name" name="name" type="text" placeholder="Enter your name" formControlName="name" required class="input input-bordered"/>
+                     
+                    </div>
+                    <div>
+                        <label class="label" for="gmail">Gmail</label>
+                        <input id="gmail" name="gmail" type="text" placeholder="enter your gmail"formControlName="gmail" class="input input-bordered"/>
+                       
+                    </div>
+                    <div>
+                        <label class="label" for="password">Password</label>
+                        <input id="password" name="password" type="password" placeholder="Enter your password"formControlName="password" required class="input input-bordered" />
+                       
+                    </div>
+    <div>
+    <label class="label" for="country">Country</label>
+	<select placeholder="select Country" id="country" name="country" formControlName="country" required class="input input-bordered" (change)="changeCountry(($any($event.target).value))">
+        <option *ngFor ="let count of countryList">{{count.name}} </option>
+    </select>
+</div>
+
+<div>
+    <label class="label" for="city">City</label>
+	<select placeholder="select city" id="city" name="city" formControlName="city" required class="input input-bordered" >
+        <option *ngFor ="let city of cities">{{city}} </option>
+        </select>
+</div>
+	
+
+
+
+
+
+                    <div>
+                        <label class="label" for="address">address</label>
+                        <input id="address" name="address" type="text" placeholder="enter your address "formControlName="address" required class="input input-bordered" />
+                       
+                    </div>
+                    <div>
+                        <label class="label" for="contactNo">Mobile No.</label>
+                        <input id="contactNo" name="contactNo" type="text" placeholder="enter your mobile no "formControlName="contactNo" class="input input-bordered" />
+                       
+                    </div>
+
+                    <div>
+                        <label class="label" for="pan">Pan Card No.</label>
+                        <input id="pan" name="pan" type="text" placeholder="enter your Pan Card no "formControlName="pan" class="input input-bordered" />
+                       
+                    </div>
+                    <div>
+                        <label class="label" for="dateOfBirth">Date of Birth</label>
+                        <input id="dateOfBirth" name="dateOfBirth" type="date" max="{{maxDate}}" placeholder="Enter Date of Birth"formControlName="dateOfBirth" class="input input-bordered" />
+                       
+                    </div>
+                   
+                    <div>
+                        <button [disabled]="registerationForm.invalid">Register</button> 
+                        <input type="reset" class="butn" value="Reset">
+                      </div>
+
+                    <div>
+                      
+                    </div>
+                </form>
+            </div>

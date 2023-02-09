@@ -1,0 +1,59 @@
+<div style="position: absolute;right: 350px; top: 95px;">
+    <h1 style="text-decoration: underline; text-align: center;">Place Your Claim Here...</h1>
+    <h1>Place your claim here and click on My claims to view history</h1>
+    <br></div>
+
+<hr>
+<br>
+<div  id="ClaimFormContainer" class="form">
+    <form [formGroup]="claimForm" (ngSubmit)="placeClaim()" >
+        <div>
+            <label class="label" for="memberName">Member Name</label>
+            <input id="memberName" name="memberName" type="text" placeholder="Enter your member Name" formControlName="memberName" required class="input input-bordered"/>
+       
+        </div>
+
+        
+
+ <div>
+    <label class="label" for="dateOfAdmission">Date of Admission</label>
+            <input  id="dateOfAdmission" name="dateOfAdmission" type="date"  min="2023-01-01" placeholder="Enter Date of Admission"formControlName="dateOfAdmission" class="input input-bordered"  />
+           
+        </div>
+
+        <div>
+            <label class="label" for="dateOfDischarge">Date of Discharge</label>
+            <input id="dateOfDischarge" name="dateOfDischarge" type="date" min="{{minDate}}" placeholder="Enter Date of Admission"formControlName="dateOfDischarge" class="input input-bordered" />
+           
+        </div>
+
+        <div>
+            <label class="label" for="providerName">Provider Name</label>
+            <input id="providerName" name="providerName" type="text" placeholder="enter Service Provider Name"formControlName="providerName" class="input input-bordered"/>
+           
+        </div>
+        <div>
+            <label class="label" for="totalBillAmount">Total Bill Amount</label>
+            <input id="totalBillAmount" name="totalBillAmount" type="number" placeholder="Enter your Total Bill Amount"formControlName="totalBillAmount" required class="input input-bordered" />
+           
+        </div>
+
+
+        <div>
+            <label class="label" for="userId">Enter Registered User Id</label>
+            <input id="userId" name="userId" type="text" placeholder="enter registered userId to place claim "formControlName="userId" required class="input input-bordered" />
+           
+        </div>
+        
+
+    <div>
+            <button [disabled]="claimForm.invalid">Place Claim</button> 
+            <input type="reset" class="butn" value="Reset">
+          </div>
+
+        <div>
+
+        </div>
+    </form>
+
+</div>

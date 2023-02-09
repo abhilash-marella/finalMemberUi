@@ -1,0 +1,39 @@
+<div style="position: absolute; right: 372px; top: 80px;">
+    <h1 style="text-decoration: underline;">Add your dependants Here...</h1>
+    <h1 >Click on My Dependants to view dependant details </h1>
+    <br><h1 >Note : User can add maximum of 2 dependants </h1>
+
+</div>
+
+
+<hr >
+<br> 
+<div  id="dependantFormContainer" class="form">
+    <form [formGroup]="dependantForm" (ngSubmit)="addDependant()" >
+        <div>
+            <label class="label" for="memberName">Member Name</label>
+            <input id="memberName" name="memberName" type="text" placeholder="Enter your member Name" formControlName="memberName" required class="input input-bordered"/>
+         
+        </div>
+
+        <div>
+            <label class="label" for="dateOfBirth">Date of Birth</label>
+            <input id="dateOfBirth" name="dateOfBirth" type="date" placeholder="Enter Date of Birth"formControlName="dateOfBirth" class="input input-bordered" />
+           
+        </div>
+
+    <div>
+            <label class="label" for="registeredUser">Enter Registered User Id</label>
+            <input id="registeredUser" name="registeredUser" type="text" placeholder="enter registered userId to place claim "formControlName="registeredUser"class="input input-bordered" />
+           
+        </div>
+    <div>
+            <button [disabled]="dependantForm.invalid">Place Claim</button> 
+            <input type="reset" class="butn" value="Reset">
+          </div>
+
+        <div>
+          
+        </div>
+    </form>
+</div>

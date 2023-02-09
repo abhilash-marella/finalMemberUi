@@ -1,0 +1,31 @@
+header{
+    background-color: rgb(25, 3, 85);
+    color: white;
+    padding: 5px;
+
+
+}
+search{
+    padding: 4px;
+    
+}
+button{
+    height: 40px;
+    padding: 10px;
+    margin: 2px;
+}
+button:hover{
+
+    background-color: rgb(177, 211, 53);
+    color: black;
+    padding: 10px 55px;
+    border: 5px outset rgb(252, 250, 252);
+    border-bottom-right-radius: 30px;
+    border-bottom-left-radius: 30px; size: 10;
+}
+.c{
+    
+        margin-left: auto;
+        margin-right: auto;
+      
+}

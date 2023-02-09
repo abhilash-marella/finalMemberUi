@@ -1,0 +1,40 @@
+<br>
+    <div style="position: absolute;right: 400px; top: 95px;">
+        
+            <input class="input input-bordered" #searchQuery style="padding: 10px 100px;" placeholder="Enter your member Id " type="text" name="searchBar" id="searchAll" (keyup.enter)="onEnter(searchQuery.value)">
+            &nbsp;&nbsp; <button class="btn btn-square" (click)="onEnter(searchQuery.value)">
+                            GO  </button>
+    </div>
+  <br>
+ <br>
+ <div>
+  <table class="c" id ="c">
+     <thead>
+          <tr>
+               <th>Member Id</th>
+               <th>User Name</th>
+                <th>Gmail</th>
+               <th>Mobile</th>
+                <th>Date Of Birth</th>
+               <th>Address</th>
+               <th>Country</th>
+               <th>City</th>
+               <th>Pan</th>
+               </tr>
+      </thead>
+       <tbody >
+          <tr>
+              <td>{{userinfo.memberId}}</td>
+                       <td>{{userinfo.name}}</td>
+                       <td>{{userinfo.gmail}}</td>
+                       <td>{{userinfo.contactNo}}</td>
+                       <td>{{userinfo.dateOfBirth}}</td>
+                       <td>{{userinfo.address}}</td>
+                       <td>{{userinfo.country}}</td>
+                       <td>{{userinfo.state}}</td>
+                       <td>{{userinfo.pan}}</td>
+
+                    </tr>
+                </tbody>
+      </table>
+    </div>  

@@ -1,0 +1,34 @@
+<br>
+    <div style="position: fixed;right: 400px; top: 80px;">
+            <Label><h1 style=" color:rgb(24, 4, 104);
+              font-weight: bold;">My Dependants</h1></Label>
+            <br>
+            <input class="input input-bordered" #searchQuery style="padding: 10px 100px;" placeholder="Enter Registered User Id" type="text" name="searchBar" id="searchAll" (keyup.enter)="onEnter(searchQuery.value)">
+            &nbsp;&nbsp; <button class="btn btn-square" (click)="onEnter(searchQuery.value)">
+                            Go  </button>
+    </div>
+  <br>
+<br>
+   <table class="c" id="c">
+     <thead>
+          <tr>
+             <th>S.No</th>
+              
+               <th>Dependant Name</th>
+               <th>Date Of Birth</th>
+              <th>Registered User Id</th>
+             <th>Dependat Age</th>
+           </tr>
+       </thead>
+      <tbody >
+          <tr *ngFor="let dependant of queryResult;let i=index">
+            <td>{{i+1}}</td>
+               
+              <td>{{dependant.memberName}}</td>
+                <td>{{dependant.dateOfBirth}}</td>
+                <td>{{dependant.registeredUser}}</td>
+               <td>{{dependant.age}}</td>
+                 </tr>
+                </tbody>
+      </table>
+         

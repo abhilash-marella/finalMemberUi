@@ -1,0 +1,64 @@
+.h1{
+    text-align: center;
+     color: rgb(47, 21, 115);
+      font-weight: bold;}
+      button {
+        width: 35%;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: solid;
+        border-radius: 4px;
+        cursor: pointer;
+        background-color:#4E9CAF;
+        }
+       button:hover{background-color: #45a049;}
+
+       
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    border-radius: 3px 7px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  input[type=reset] {
+    width: 35%;
+    color: white;
+    padding: 14px 15px;
+    margin: 8px 0;
+    border: solid;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color:#4E9CAF;
+  }
+  
+  input[type=reset]:hover {
+    background-color: #45a049;
+  }
+  
+  div.form {
+    width: 60%;
+    border-radius: 5px;
+  padding: 30px;
+  margin-left : 20%;
+  background-color: white;
+  }
+  h1{
+    color: #1a0594;
+    font-weight: bolder;
+    font-size: larger;
+  }
+  label {
+    width: 100%;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4E9CAF;
+    color: white;
+  }
+  

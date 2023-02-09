@@ -1,0 +1,40 @@
+<br>
+    <div style="position: fixed;right: 400px; top: 80px;">
+            <Label><h1 style="color:  rgb(24, 4, 104);
+              font-weight: bold;">My Claims</h1></Label>
+            <br>
+            <input class="input input-bordered" #searchQuery style="padding: 10px 100px;" placeholder="Enter Registered User Id" type="text" name="searchBar" id="searchAll" (keyup.enter)="onEnter(searchQuery.value)">
+            &nbsp;&nbsp; <button class="btn btn-square" (click)="onEnter(searchQuery.value)">
+                            Go  </button>
+    </div>
+  <br>
+ <br>
+   <table class="c" id="c">
+     <thead>
+          <tr>
+            <th>S.No</th>
+              <th>Claim Number</th>
+              <th>Member Name</th>
+              <th>Date Of Birth</th>
+              <th>Date Of Admission</th>
+              <th>Date Of Discharge</th>
+              <th>Provider Name</th>
+              <th>Total Bill Amount</th>
+              <th>Registered User Id</th>
+           </tr>
+       </thead>
+      <tbody >
+          <tr *ngFor="let claim of queryResult;let i=index">
+                <td>{{i+1}}</td>
+                <td>{{claim.claimNumber}}</td>
+                <td>{{claim.memberName}}</td>
+                <td>{{claim.dateOfBirth}}</td>
+                <td>{{claim.dateOfAdmission}}</td>
+                <td>{{claim.dateOfDischarge}}</td>
+                <td>{{claim.providerName}}</td>
+                <td>{{claim.totalBillAmount}}</td>
+                <td>{{claim.userId}}</td>
+                 </tr>
+                </tbody>
+      </table>
+         
