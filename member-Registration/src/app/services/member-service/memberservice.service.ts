@@ -13,24 +13,24 @@ export class MemberService {
  constructor(private httpClient: HttpClient) {
 }
   registerUser(user: User) {
-   return this.httpClient.post<User>("http://localhost:8088/register", user);
+   return this.httpClient.post<User>("http://3.91.249.143:8088/register", user);
   }
   registerClaim(claim: Claim) {
-    return this.httpClient.post<Claim>("http://localhost:8089/placeClaim", claim);
+    return this.httpClient.post<Claim>("http://3.91.249.143:8089/placeClaim", claim);
   }
   addDependant(dependant: Dependant) {
-   return this.httpClient.post<Dependant>("http://localhost:8089/addDependant", dependant);
+   return this.httpClient.post<Dependant>("http://3.91.249.143:8089/addDependant", dependant);
   }
 getDependantsByUserId(userId: string): Observable<any> {
     console.log("==================="+userId);
-    return this.httpClient.get("http://localhost:8089/getDependants/"+userId );
+    return this.httpClient.get("http://3.91.249.143:8089/getDependants/"+userId );
   }
   getClaimsByUserId(userId: string): Observable<any> {
     console.log("==================="+userId);
-    return this.httpClient.get("http://localhost:8089/yourClaims/"+userId );
+    return this.httpClient.get("http://3.91.249.143:8089/yourClaims/"+userId );
   } 
   
   getUserData(userId: string) {
-    return this.httpClient.get("http://localhost:8089/memeberDetails/"+userId);
+    return this.httpClient.get("http://3.91.249.143:8089/memeberDetails/"+userId);
    }
 }

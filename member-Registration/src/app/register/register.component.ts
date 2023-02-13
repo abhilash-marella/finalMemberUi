@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { MemberService } from '../services/member-service/memberservice.service';
+import { HttpErrorResponse } from '@angular/common/http';
+
 
 @Component({
   selector: 'app-register',
@@ -68,10 +70,12 @@ export class RegisterComponent {
       success => {
         this.user = success;
         alert("Register successfully Your member Id "+this.user.memberId +" note it somewhere")
-
+        this.router.navigate(["/"])
+      },(error:HttpErrorResponse)=>{console.log(error.error.message)
+        alert(error.error.message)
       }
     );
-    this.router.navigate(["/"])
+    
   }
 
  
