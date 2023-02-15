@@ -20,12 +20,14 @@ export class ClaimComponent {
   errorMessage : string = "";
   claims!: Claim;
   submitted:boolean=false;
+  maxDate !:any;
   constructor(
     private memberServices: MemberService,
     private formBuilder: FormBuilder,private router: Router,
     ) { }
-    minDate!:Date;
   ngOnInit(): void {
+    this.getMaxDate();
+
     this.claimForm = this.formBuilder.group({
       memberName:['',[Validators.required,Validators.pattern('^[A-Za-z ]+$'),Validators.minLength(3)]],
       dateOfAdmission:['',[Validators.required,Validators.minLength(1)]],
@@ -39,7 +41,24 @@ export class ClaimComponent {
 
    
   }
-
+  getMaxDate()
+  {
+   var date=new Date();
+   var toDate:any=date.getDate()
+   
+   var month:any=date.getMonth()+1;
+   if(toDate<10)
+   {
+     toDate="0"+toDate;
+   }
+   if(month<10)
+   {
+     month="0"+month;
+   }
+    var year=date.getFullYear();
+   this.maxDate=year+"-"+month+"-"+toDate
+   console.log(this.maxDate)
+  }
   placeClaim() { 
     this.memberServices.registerClaim(this.claimForm.value).subscribe(
       success => {
